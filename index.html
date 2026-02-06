@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>For Ragini ❤️</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        background: linear-gradient(120deg, #ffd6e8, #ffeef5);
+        text-align: center;
+        overflow-x: hidden;
+    }
+
+    h1 {
+        margin-top: 40px;
+        font-size: 40px;
+        color: #ff4d88;
+        animation: pop 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes pop {
+        from { transform: scale(1); }
+        to { transform: scale(1.08); }
+    }
+
+    .message {
+        font-size: 20px;
+        margin: 20px auto;
+        width: 80%;
+        color: #444;
+    }
+
+    .gallery {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .gallery img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+        transform: scale(1.1);
+    }
+
+    .heart {
+        position: fixed;
+        top: -10px;
+        color: #ff4d88;
+        font-size: 24px;
+        animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+        to { transform: translateY(110vh); }
+    }
+
+    #valentine {
+        margin-top: 50px;
+    }
+
+    .btn {
+        padding: 15px 30px;
+        font-size: 20px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        margin: 10px;
+        transition: 0.3s;
+    }
+
+    .yes {
+        background-color: #ff4d88;
+        color: white;
+    }
+
+    .no {
+        background-color: #999;
+        color: white;
+        position: absolute;
+    }
+
+    #response {
+        font-size: 28px;
+        margin-top: 30px;
+        color: #ff4d88;
+        display: none;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Hi Ragini 💕</h1>
+
+<div class="message">
+    I made this little surprise just for you because you deserve the cutest things in the world 🌸<br><br>
+    Every moment with you is my favorite memory, and today I just want to ask you something very special...
+</div>
+
+<div class="gallery">
+    <!-- Replace image names with your photos -->
+    <img src="photo1.jpg" alt="">
+    <img src="photo2.jpg" alt="">
+    <img src="photo3.jpg" alt="">
+    <img src="photo4.jpg" alt="">
+</div>
+
+<div id="valentine">
+    <h2>Will you be my Valentine? 💖</h2>
+    <button class="btn yes" onclick="sayYes()">YES 😍</button>
+    <button class="btn no" id="noBtn">NO 😜</button>
+</div>
+
+<div id="response">Yayyyy!!! You just made me the happiest person alive 🥰💘</div>
+
+<script>
+    // Floating hearts
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "💖";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 5000);
+    }
+    setInterval(createHeart, 300);
+
+    // Funny NO button that runs away
+    const noBtn = document.getElementById("noBtn");
+    noBtn.addEventListener("mouseover", () => {
+        noBtn.style.top = Math.random() * 80 + "vh";
+        noBtn.style.left = Math.random() * 80 + "vw";
+    });
+
+    function sayYes() {
+        document.getElementById("response").style.display = "block";
+    }
+</script>
+
+</body>
+</html>
